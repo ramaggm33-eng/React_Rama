@@ -1,17 +1,42 @@
-import React from 'react';
+import { useState } from 'react';
 import './App.css';
 
 function App() {
+  const [likes, setLikes] = useState(0);
+
   return (
-    <div style={{ padding: '20px', fontFamily: 'Arial, sans-serif', textAlign: 'center' }}>
-      <h1>Halo, Ini Website React Rayhan Ibrahim! 👋</h1>
-      <p>Saya sedang menyelesaikan tugas belajar React dan Vite.</p>
-      
-      <div style={{ marginTop: '20px', padding: '15px', border: '1px solid #ddd', borderRadius: '8px', display: 'inline-block' }}>
-        <h3>Biodata Singkat</h3>
-        <p><strong>Status Tugas:</strong> Sedang Dikerjakan</p>
-        <p><strong>Fitur:</strong> Berhasil dijalankan di localhost!</p>
-      </div>
+    <div style={{ fontFamily: 'sans-serif', textAlign: 'center', padding: '40px' }}>
+      <header>
+        <h1>Halo, Selamat Datang di Web React </h1>
+        <h1>Rama Adyatama!</h1>
+        <p>Project pertama menggunakan React dan Vite.</p>
+      </header>
+
+      <main style={{ marginTop: '30px' }}>
+        <div style={{
+          border: '1px solid #ccc',
+          borderRadius: '8px',
+          padding: '20px',
+          maxWidth: '400px',
+          margin: '0 auto'
+        }}>
+          <h2>Profil Singkat</h2>
+          <p>Status: Sedang belajar dasar React & Git workflow.</p>
+          <button 
+            onClick={() => setLikes(likes + 1)}
+            style={{
+              padding: '10px 16px',
+              backgroundColor: '#007bff',
+              color: 'white',
+              border: 'none',
+              borderRadius: '4px',
+              cursor: 'pointer'
+            }}
+          >
+            Beri Dukungan ({likes})
+          </button>
+        </div>
+      </main>
     </div>
   );
 }
